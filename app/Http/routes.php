@@ -16,8 +16,9 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
 Route::get('clientes',function(){
-   $todos= App\Cliente::find(1);
-    dd($todos->tipo_cliente);
+   $todos= App\Domicilio::find(1);
+   $todos=$todos->full_domicilio;
+    return view('domicilios', array('domicilio'=>$todos));
 });
 
 Route::controllers([
