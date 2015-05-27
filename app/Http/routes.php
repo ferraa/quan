@@ -15,6 +15,11 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::get('clientes',function(){
+   $todos= App\Cliente::find(1);
+    dd($todos->tipo_cliente);
+});
+
 Route::controllers([
     'user'  => 'UserController',
 	'auth' => 'Auth\AuthController',
