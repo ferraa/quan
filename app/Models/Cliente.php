@@ -31,7 +31,7 @@ class Cliente extends Model
 
 
     public function foto(){
-        return $this->hasOne('App\Foto');
+        return $this->hasOne('App\Models\Foto','id_foto','id_foto');
     }
     public function getFullNameAttribute(){
         if(is_null($this->denominacion))
@@ -51,5 +51,9 @@ class Cliente extends Model
 
     public function contactos(){
         return $this->belongsToMany('App\Models\Contacto','clientes_contactos','id_cliente','id_contacto');
+    }
+
+    public function razonesSociales(){
+        return $this->hasMany('App\Models\ClienteRazonSocial', 'id_cliente', 'id_cliente');
     }
 }

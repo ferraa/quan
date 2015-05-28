@@ -5,18 +5,24 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Domicilios</div>
+                    <div class="panel-heading">Cliente</div>
 
                     <div class="panel-body">
-                        CLIENTE:
+                        Nombre:
                         {{ $cliente->full_name }}{!! "<br><br>"!!}
-                        DOMICILIOS
+                        {!! $cliente->foto->render()!!}{!! "<br><br>"!!}
+                        DOMICILIOS{!! "<br>"!!}
                         @foreach($cliente->domicilios as $domicilio)
                        {{ $domicilio->full_domicilio." ".$domicilio->piso}}{!! "<br>"!!}
                             @endforeach
-                        CONTACTOS
+                        {!! "<br><br>"!!}CONTACTOS{!! "<br>"!!}
                         @foreach($cliente->contactos as $contacto)
                             {{ $contacto->full_name.". Notas: ".$contacto->notas}}{!! "<br>"!!}
+                        @endforeach
+
+                        {!! "<br><br>"!!}RAZONES SOCIALES{!! "<br>"!!}
+                        @foreach($cliente->razonesSociales as $razonSocial)
+                            {{ $razonSocial->descripcion.". Cuit: ".$razonSocial->cuit_cuil}}{!! "<br>"!!}
                         @endforeach
                     </div>
                 </div>
