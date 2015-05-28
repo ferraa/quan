@@ -8,7 +8,16 @@
                     <div class="panel-heading">Domicilios</div>
 
                     <div class="panel-body">
-                       {{ $domicilio }}
+                        CLIENTE:
+                        {{ $cliente->full_name }}{!! "<br><br>"!!}
+                        DOMICILIOS
+                        @foreach($cliente->domicilios as $domicilio)
+                       {{ $domicilio->full_domicilio." ".$domicilio->piso}}{!! "<br>"!!}
+                            @endforeach
+                        CONTACTOS
+                        @foreach($cliente->contactos as $contacto)
+                            {{ $contacto->full_name.". Notas: ".$contacto->notas}}{!! "<br>"!!}
+                        @endforeach
                     </div>
                 </div>
             </div>

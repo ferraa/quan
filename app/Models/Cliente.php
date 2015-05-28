@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -44,5 +44,12 @@ class Cliente extends Model
             return "Persona";
         else
             return "Empresa";
+    }
+    public function domicilios(){
+        return $this->belongsToMany('App\Models\Domicilio','clientes_domicilios','id_cliente','id_domicilio');
+    }
+
+    public function contactos(){
+        return $this->belongsToMany('App\Models\Contacto','clientes_contactos','id_cliente','id_contacto');
     }
 }

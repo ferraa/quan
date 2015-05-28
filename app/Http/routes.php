@@ -16,9 +16,11 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
 Route::get('clientes',function(){
-   $todos= App\Domicilio::find(1);
-   $todos=$todos->full_domicilio;
-    return view('domicilios', array('domicilio'=>$todos));
+   $cliente= App\Models\Cliente::find(1);
+   //$todos=$todos->full_domicilio;
+
+    //dd($domicilios);
+    return view('domicilios', array('cliente'=>$cliente));
 });
 
 Route::controllers([
