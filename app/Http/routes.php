@@ -15,19 +15,24 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('clientes',function(){
+/*Route::get('clientes',function(){
    $cliente= App\Models\Cliente::find(1);
    //$todos=$todos->full_domicilio;
 
     //dd($domicilios);
     return view('domicilios', array('cliente'=>$cliente));
-});
+});*/
 
 Route::controllers([
     'user'  => 'UserController',
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
+
+
+
 ]);
+
+Route:resource('clientes','Cliente\ClienteController');
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'],function(){
 

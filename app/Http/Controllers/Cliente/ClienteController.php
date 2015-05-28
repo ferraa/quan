@@ -1,11 +1,17 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Cliente;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
-class AdminUserContdadsfa extends Controller {
+class ClienteController extends Controller {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +20,8 @@ class AdminUserContdadsfa extends Controller {
 	 */
 	public function index()
 	{
-		//
+        $clientes = Cliente::paginate();
+        return view('clientes.index',compact('clientes'));
 	}
 
 	/**
@@ -56,7 +63,8 @@ class AdminUserContdadsfa extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+        $cliente = Cliente::find($id);
+        return view('clientes.edit',compact('cliente'));
 	}
 
 	/**
