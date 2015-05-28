@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'HomeController@index');
 
-Route::get('home', 'HomeController@index');
+//Route::get('home', 'HomeController@index');
 
 /*Route::get('clientes',function(){
    $cliente= App\Models\Cliente::find(1);
@@ -27,8 +27,6 @@ Route::controllers([
     'user'  => 'UserController',
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
-
-
 
 ]);
 
