@@ -30,7 +30,11 @@ Route::controllers([
 
 ]);
 
-Route:resource('clientes','Cliente\ClienteController');
+Route::resource('clientes','Cliente\ClienteController');
+
+Route::resource('centros','Proveedor\CentroDeCostoController');
+
+Route::resource('proveedores','Proveedor\ProveedorController');
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'],function(){
 

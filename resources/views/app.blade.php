@@ -30,19 +30,28 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Quan</a>
+				<a class="navbar-brand" style="padding:0" href="#"><img src="/img/logo.png" width="120px" height="50px"> </a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                @if (!Auth::guest())
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('/clientes') }}">Clientes</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Proveedores<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/proveedores') }}">Lista</a></li>
+                            <li><a href="{{ url('/centros') }}">Centros de costo</a></li>
+                        </ul>
+                    </li>
 				</ul>
+                @endif
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
+						<!--li><a href="{{ url('/auth/register') }}">Register</a></li-->
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
