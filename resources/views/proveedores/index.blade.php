@@ -25,8 +25,14 @@
                                     <td>{{ $proveedor->full_name }}</td>
                                     <td>{{ $proveedor->telefono }}</td>
                                     <td>
-                                        <a href="{{ url('/proveedores/'.$proveedor->id_proveedor.'/edit') }}">Ver</a>
-                                        <a href="#">Eliminar</a>
+
+                                        <a href="{{ url('/proveedores/'.$proveedor->id_proveedor.'/edit') }}" class="btn btn-warning">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                            Editar
+                                        </a>
+
+                                        <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
+                                        
                                     </td>
                                 </tr>
                             @endforeach
