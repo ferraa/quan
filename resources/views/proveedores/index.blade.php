@@ -8,6 +8,11 @@
                     <div class="panel-heading">Proveedores</div>
 
 
+                    @if(\Illuminate\Support\Facades\Session::has('message'))
+
+                        <p class="alert alert-success">{{\Illuminate\Support\Facades\Session::get('message')}}</p>
+                    @endif
+
                     <div class="panel-body">
                         <p>Hay {{$proveedores->total()}} proveedores.</p>
                         <table class="table table-striped">
@@ -26,13 +31,21 @@
                                     <td>{{ $proveedor->telefono }}</td>
                                     <td>
 
-                                        <a href="{{ url('/proveedores/'.$proveedor->id_proveedor.'/edit') }}" class="btn btn-warning">
-                                            <span class="glyphicon glyphicon-pencil"></span>
-                                            Editar
-                                        </a>
 
-                                        <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
-                                        
+                                            {!! Form::open(array('method' => 'DELETE', 'route'=>['proveedores.destroy',$proveedor])) !!}
+                                            <a href="{{ url('/proveedores/'.$proveedor->id_proveedor) }}" class="btn btn-success btn-sm">
+                                                <span class="glyphicon glyphicon-open"></span>
+                                                Ver
+                                            </a>
+
+                                            <a href="{{ url('/proveedores/'.$proveedor->id_proveedor.'/edit') }}" class="btn btn-warning btn-sm">
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                                Editar
+                                            </a>
+
+                                            {!! Form::submit('Borrar', array('class' => 'btn btn-danger btn-sm')) !!}
+                                            <!--a href="#" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Borrar</a-->
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach

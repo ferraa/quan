@@ -1,11 +1,14 @@
 <?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 class Cliente extends Model
 {
 
 
+    use SoftDeletes;
 
     /**
      * The database table used by the model.
@@ -56,4 +59,12 @@ class Cliente extends Model
     public function razonesSociales(){
         return $this->hasMany('App\Models\ClienteRazonSocial', 'id_cliente', 'id_cliente');
     }
+
+    public function scopeName($query,$name){
+
+        if(trim($name)!="")
+            $query->where(DB::raw("CONCAT(nombres,' ',apellidos)"),"LIKE","%$name%");
+
+    }
+
 }

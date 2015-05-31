@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Psy\Command\ListCommand\PropertyEnumerator;
 
 class ProveedorController extends Controller {
 
@@ -47,7 +49,8 @@ class ProveedorController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $proveedor = Proveedor::find($id);
+        return view('proveedores.show',compact('proveedor'));
 	}
 
 	/**
@@ -58,8 +61,7 @@ class ProveedorController extends Controller {
 	 */
 	public function edit($id)
 	{
-        $proveedor = Proveedor::find($id);
-        return view('proveedores.edit',compact('proveedor'));
+        //
 	}
 
 	/**
@@ -81,7 +83,16 @@ class ProveedorController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$proveedor=Proveedor::findOrFail($id);
+       // $proveedor->find($id);
+        //Proveedor::destroy($id);
+        $proveedor->delete();
+
+
+        Session::flash('message','El proveedor '.$proveedor->full_name.' fue eliminado');
+
+
+        return redirect()->route('proveedores.index');
 	}
 
 }

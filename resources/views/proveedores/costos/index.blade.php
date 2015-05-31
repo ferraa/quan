@@ -23,12 +23,16 @@
                                     <td>{{ $centro->centroDeCosto->descripcion }}</td>
                                     <td>{{ $centro->detalle }}</td>
                                     <td>
-                                        <a href="{{ url('/centros/'.$centro->id_centro_de_costo_detalle.'/edit') }}" class="btn btn-warning">
+                                        <a href="{{ url('/centros/'.$centro->id_centro_de_costo_detalle) }}" class="btn btn-success btn-sm">
+                                            <span class="glyphicon glyphicon-open"></span>
+                                            Ver
+                                        </a>
+                                        <a href="{{ url('/centros/'.$centro->id_centro_de_costo_detalle.'/edit') }}" class="btn btn-warning btn-sm">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                             Editar
                                         </a>
 
-                                        <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
+                                        <a href="#" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
 
                                     </td>
                                 </tr>

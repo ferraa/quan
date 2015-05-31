@@ -27,6 +27,11 @@
                             {{ $razonSocial->descripcion.". Cuit: ".$razonSocial->cuit_cuil}}{!! "<br>"!!}
                         @endforeach
                         {!! "<hr>"!!}
+
+                        {!! Form::open(array('method' => 'DELETE', 'route'=>['clientes.destroy',$cliente->id_cliente], 'id'=>'form-delete')) !!}
+
+                        {!! Form::submit('Borrar', array('class' => 'btn btn-danger btn-sm')) !!}
+                        {!! Form::close()!!}
                     </div>
 
                 </div>

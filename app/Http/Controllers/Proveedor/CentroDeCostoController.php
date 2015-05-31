@@ -53,7 +53,8 @@ class CentroDeCostoController extends Controller {
 	 */
 	public function show($id)
 	{
-        //
+        $centroDeCosto = CentroDeCostoDetalle::find($id);
+        return view('proveedores.costos.show',compact('centroDeCosto'));
 	}
 
 	/**
@@ -64,8 +65,7 @@ class CentroDeCostoController extends Controller {
 	 */
 	public function edit($id)
 	{
-        $centroDeCosto = CentroDeCostoDetalle::find($id);
-        return view('proveedores.costos.edit',compact('centroDeCosto'));
+       //
 	}
 
 	/**

@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ClienteController extends Controller {
 
@@ -18,9 +19,10 @@ class ClienteController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-        $clientes = Cliente::paginate();
+      //  $clientes = Cliente::name($request->get('name'))->paginate();
+        $clientes = Cliente::all();
         return view('clientes.index',compact('clientes'));
 	}
 
@@ -52,7 +54,8 @@ class ClienteController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $cliente = Cliente::find($id);
+        return view('clientes.show',compact('cliente'));
 	}
 
 	/**
@@ -63,8 +66,9 @@ class ClienteController extends Controller {
 	 */
 	public function edit($id)
 	{
-        $cliente = Cliente::find($id);
-        return view('clientes.edit',compact('cliente'));
+        $cliente= Cliente::find($id);
+       // $cliente->domicilios()->attach(1);
+        dd($cliente);
 	}
 
 	/**
@@ -78,15 +82,34 @@ class ClienteController extends Controller {
 		//
 	}
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @param Request $request
+     * @return Response
+     */
+	public function destroy($id,Request $request)
 	{
-		//
+        //abort(500);
+        $cliente=Cliente::find($id);
+
+        $cliente->delete();
+
+        $mensaje='El cliente '.$cliente->full_name.' fue eliminado';
+
+        if($request->ajax()){
+            return response()->json([
+                'id' => $cliente->id_cliente,
+               'mensaje'=>$mensaje
+            ]);
+        }
+
+
+        Session::flash('message',$mensaje);
+
+
+        return redirect()->route('clientes.index');
 	}
 
 }
