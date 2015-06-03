@@ -89,7 +89,7 @@
 
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     <link href='//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
-
+    <script src="../js/bootstrap-notify.js"></script>
 
     <script>
 

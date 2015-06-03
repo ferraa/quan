@@ -18,6 +18,7 @@ class CreateDomiciliosTable extends Migration {
             $table->string('calle',40);
             $table->integer('numero');
             $table->integer('piso')->nulleable();
+            $table->string('depto',4)->nulleable();
             $table->integer('id_ciudad');
             $table->boolean('principal');
 

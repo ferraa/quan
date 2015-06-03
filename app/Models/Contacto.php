@@ -11,4 +11,7 @@ class Contacto extends Model {
         return $this->nombre." ".$this->apellido;
     }
 
+    public function foto(){
+        return $this->hasOne('App\Models\Foto','id_foto','id_foto');
+    }
 }

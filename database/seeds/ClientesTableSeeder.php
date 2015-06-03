@@ -12,7 +12,7 @@ class ClientesTableSeeder extends Seeder{
 
         $faker = Faker::create();
 
-        for($i=0;$i<50;$i++){
+        for($i=0;$i<500;$i++){
             \DB::table('clientes')->insert(array(
                 'denominacion' => $faker->name,
 

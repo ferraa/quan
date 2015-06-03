@@ -11,8 +11,10 @@ class Foto extends Model {
         return $this->calle." ".$this->numero;
     }*/
 
-    public function render(){
-        return "<img src='/fotos/".$this->path."' width='120px' height='120px'>";
+    public function render($width,$height){
+        return "<img src='/fotos/".$this->path."'  class='img-thumbnail'  width='".$width."' height='".$height."'>";
+
     }
+
 
 }

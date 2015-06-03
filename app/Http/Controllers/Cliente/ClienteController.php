@@ -66,9 +66,8 @@ class ClienteController extends Controller {
 	 */
 	public function edit($id)
 	{
-        $cliente= Cliente::find($id);
-       // $cliente->domicilios()->attach(1);
-        dd($cliente);
+        $cliente = Cliente::find($id);
+        return view('clientes.edit',compact('cliente'));
 	}
 
 	/**
