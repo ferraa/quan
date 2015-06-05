@@ -3,17 +3,17 @@
 use \Illuminate\Database\Seeder;
 use \Faker\Factory as Faker;
 
-class ClientesTableSeeder extends Seeder{
+class ProveedoresTableSeeder extends Seeder{
 
     /**
      *
      */
     public function run(){
 
-        $faker = Faker::create('es_ES');
+        $faker = Faker::create('es_AR');
 
         for($i=0;$i<500;$i++){
-            \DB::table('clientes')->insert(array(
+            \DB::table('proveedores')->insert(array(
                 'denominacion' => $faker->name,
 
                 'mail' => $faker->email,

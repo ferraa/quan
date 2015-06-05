@@ -24,7 +24,7 @@ class CreateProveedoresTable extends Migration {
             $table->string('extension',8)->nullable();
             $table->string('celular',30)->nullable();
             $table->string('mail',100)->nullable();
-            $table->string('pagina web',200);
+            $table->string('pagina_web',200);
             $table->text('notas');
             $table->integer('id_foto')->unsigned()->nullable();
 
