@@ -54,7 +54,7 @@
 
                         </ul>
                     </li>
-                    <li><a href="#">Tipos de cambio</a></li>
+                    <li><a href="#">Tipos de nacho</a></li>
 
 				</ul>
                 @endif
