@@ -10,6 +10,12 @@ use Psy\Command\ListCommand\PropertyEnumerator;
 
 class ProveedorController extends Controller {
 
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -61,7 +67,8 @@ class ProveedorController extends Controller {
 	 */
 	public function edit($id)
 	{
-        //
+        $proveedor = Proveedor::find($id);
+        return view('proveedores.edit',compact('proveedor'));
 	}
 
 	/**

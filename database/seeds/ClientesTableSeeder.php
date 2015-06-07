@@ -10,7 +10,18 @@ class ClientesTableSeeder extends Seeder{
      */
     public function run(){
 
-        $faker = Faker::create('es_ES');
+        \DB::table('clientes')->insert(array(
+            'nombres' => 'Matias',
+            'apellidos' => 'Ferrario',
+
+            'mail' => 'ferraa@hotmail.com',
+            'pagina_web' => 'www.gregor.com.ar',
+            'telefono' => '1164455073',
+            'notas' => 'Notas',
+            'id_foto' => 1,
+        ));
+
+        $faker = Faker::create('es_AR');
 
         for($i=0;$i<500;$i++){
             \DB::table('clientes')->insert(array(

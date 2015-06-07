@@ -34,7 +34,7 @@ class CreateProveedoresRazonesSocialesTable extends Migration {
 	 */
 	public function down()
 	{
-        //Schema::drop('proveedores_razones_sociales');
+        Schema::drop('proveedores_razones_sociales');
 	}
 
 }

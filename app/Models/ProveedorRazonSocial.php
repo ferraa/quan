@@ -7,8 +7,10 @@ class ProveedorRazonSocial extends Model {
     protected $table = 'proveedores_razones_sociales';
     protected $primaryKey='id_razon_social';
 
-    /* public function getFullDomicilioAttribute(){
-         return $this->calle." ".$this->numero;
-     }*/
+
+
+    public function categoriaRazonSocial(){
+        return $this->hasOne('App\Models\CategoriaRazonSocial', 'id_categoria_raz_soc', 'id_categoria_raz_soc');
+    }
 
 }

@@ -15,19 +15,21 @@ class CreateClientesTable extends Migration {
 		Schema::create('clientes', function(Blueprint $table)
 		{
 			$table->increments('id_cliente');
-            $table->string('denominacion',40);
-            $table->string('nombres',40);
-            $table->string('apellidos',40);
-            $table->integer('dni');
+            $table->string('denominacion',40)->nullable();
+            $table->string('nombres',40)->nullable();
+            $table->string('apellidos',40)->nullable();
+            $table->integer('dni')->nullable();
             $table->string('telefono',20);
-            $table->integer('extension');
-            $table->string('celular',25);
-            $table->string('mail',45);
+            $table->integer('extension')->nullable();
+            $table->string('celular',25)->nullable();
+            $table->string('mail',45)->nullable();
             $table->string('pagina_web',40);
             $table->text('notas');
-            $table->unsignedInteger('id_foto');
+            $table->integer('id_foto')->unsigned()->nullable();
             $table->softDeletes();
 			$table->timestamps();
+
+            $table->foreign('id_foto')->references('id_foto')->on('fotos');
 		});
 	}
 

@@ -10,6 +10,12 @@ class UserTableSeeder extends Seeder{
      */
     public function run(){
 
+        \DB::table('users')->insert(array(
+            'name' => 'Administrador uno',
+            'email' => 'admin',
+            'password' => \Illuminate\Support\Facades\Hash::make('admin')
+        ));
+
         $faker = Faker::create();
 
         for($i=0;$i<50;$i++){
