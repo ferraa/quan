@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use App\User;
 use Validator;
+use App\Events\UserCreated;
+use Event;
 
 class AuthController extends Controller {
 
@@ -48,6 +50,7 @@ class AuthController extends Controller {
      */
     public function create(array $data)
     {
+        Event::fire(new UserCreated($data));
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

@@ -40,3 +40,5 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin'],function(){
 
     Route::resource('users','UsersController');
 });
+
+Route::resource('excel','ExcelController');
