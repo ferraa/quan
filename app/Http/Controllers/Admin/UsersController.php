@@ -47,7 +47,11 @@ class UsersController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$user=User::find($id);
+
+        //dd($user);
+
+        return view('admin.users.show',compact('user'));
 	}
 
 	/**

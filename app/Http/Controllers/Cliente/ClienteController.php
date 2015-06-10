@@ -5,15 +5,27 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\User;
 
 class ClienteController extends Controller {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    protected $operacion;
 
+    public function __construct(){
+        parent::__construct();
+       // $this->operacion=4;
+        //$this->middleware('operacion:'.$operacion);
+
+        //LISTAR CLIENTeS
+        //$operacion=3;
+        $this->middleware('operacion');
+
+        //EDITAR CLIENTE
+       // $operacion=3;
+       // $this->middleware('operacion:'.$operacion, ['only' => ['edit']]);
+    }
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -21,9 +33,15 @@ class ClienteController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-      //  $clientes = Cliente::name($request->get('name'))->paginate();
-        $clientes = Cliente::all();
-        return view('clientes.index',compact('clientes'));
+        $this->operacion=4;
+      //  $operacion=5;
+       // $this->middleware('operacion:'.$operacion);
+
+
+          //  $clientes = Cliente::name($request->get('name'))->paginate();
+            $clientes = Cliente::all();
+            return view('clientes.index',compact('clientes'));
+
 	}
 
 	/**

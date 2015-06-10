@@ -16,6 +16,8 @@ class CreateSistemaOperacionesTable extends Migration {
             $table->increments('id_sistema_operacion');
 
             $table->string('descripcion', 100);
+            $table->string('path', 40);
+            $table->string('method', 20);
 
             $table->timestamps();
 

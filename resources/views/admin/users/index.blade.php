@@ -14,6 +14,7 @@
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Perfil</th>
                                 <th>Acciones</th>
                             </tr>
                             @foreach($users as $user)
@@ -21,8 +22,9 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
+                                <td>{{ $user->perfil->descripcion }}</td>
                                 <td>
-                                    <a href="#">Editar</a>
+                                    <a href="{{ url('/admin/users/'.$user->id) }}" class="btn btn-success btn-sm">Ver</a>
                                     <a href="#">Eliminar</a>
                                 </td>
                             </tr>

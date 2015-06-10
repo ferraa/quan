@@ -36,8 +36,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function profile(){
         return $this->hasOne('App\UserProfile');
     }
+    public function perfil(){
+        return $this->hasOne('App\Models\Perfil','id_perfil','id_perfil');
+    }
     public function getFullNameAttribute(){
 
         return $this->name." ".$this->email;
+    }
+    public function tieneOperacion($idOperacion){
+
+        return $this->perfil->tieneOperacion($idOperacion);
     }
 }

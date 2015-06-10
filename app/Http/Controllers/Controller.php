@@ -8,4 +8,8 @@ abstract class Controller extends BaseController {
 
 	use DispatchesCommands, ValidatesRequests;
 
+    public function __construct(){
+        $this->middleware('auth', ['except' => ['auth/login']]);
+    }
+
 }
