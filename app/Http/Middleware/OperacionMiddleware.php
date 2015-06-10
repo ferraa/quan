@@ -17,6 +17,7 @@ class OperacionMiddleware
     public function handle($request, Closure $next)
     {
         $path=$request->getRequestUri();
+        $path = preg_replace('/[1-9]{1,}/', '*', $path);
         $method=$request->getMethod();
 
         //dd($request);
@@ -35,7 +36,7 @@ class OperacionMiddleware
         if($request->ajax()){
             abort(500);
         }
-        
+
         return redirect('/')->withErrors(array('operacion' => 'Operacion no permitida para su perfil.'));
 
     }
