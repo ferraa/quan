@@ -48,7 +48,11 @@
 
                     <!--tabla contactos-->
                     <div class="col-md-10">
-                        <h3>Contactos</h3>
+                        <h3>Contactos
+                            <button type="button" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                            </button>
+                        </h3>
                         <table class="table table-striped">
                             <thead>
                             <tr>
@@ -92,7 +96,11 @@
                     </div>
 
                     <div class="col-md-10">
-                        <h3>Domicilios</h3>
+                        <h3>Domicilios
+                            <button type="button" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                            </button>
+                        </h3>
                         <table class="table table-striped">
                             <thead>
                             <tr>
@@ -130,7 +138,11 @@
                         </table>
                     </div>
                     <div class="col-md-10">
-                        <h3>Razones Sociales</h3>
+                        <h3>Razones Sociales
+                            <button type="button" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                            </button>
+                        </h3>
                         <table class="table table-striped">
                             <thead>
                             <tr>
@@ -169,6 +181,8 @@
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
+                                <a href="#" class="btn btn-danger btn-lg-10 btn-delete"></span>Borrar</a>
+                                <a href="{{ url('/proveedores') }}" class="btn btn-success btn-lg-10">Volver</a>
 
                             </div>
                         </div>

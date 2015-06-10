@@ -5,7 +5,12 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Proveedores</div>
+                    <div class="panel-heading">Proveedores
+                         <button type="button" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                          </button>
+                        <a href="{{ url('/excel') }}" class="btn btn-success btn-sm pull-right" > Exportar Excel</a>
+                    </div>
 
 
 
@@ -85,7 +90,7 @@
                 language: {
                     processing:     "Traitement en cours...",
                     search:         "Buscar:",
-                    lengthMenu:    "Mostrar _MENU_ elementos",
+                    lengthMenu:     "Mostrar _MENU_ elementos",
                     info:           "Mostrando elementos desde _START_ hasta _END_ de _TOTAL_ elementos",
                     infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
                     infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
