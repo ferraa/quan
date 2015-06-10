@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration {
 
 
 
-            $table->foreign('id_perfil')->references('id_perfil')->on('perfiles');
+            //$table->foreign('id_perfil')->references('id_perfil')->on('perfiles'); //tuve que comentar esta linea para que corra, la inclui a manophp
 		});
 	}
 

@@ -13,7 +13,8 @@ class UserTableSeeder extends Seeder{
         \DB::table('users')->insert(array(
             'name' => 'Administrador uno',
             'email' => 'admin',
-            'password' => \Illuminate\Support\Facades\Hash::make('admin')
+            'password' => \Illuminate\Support\Facades\Hash::make('admin'),
+            'id_perfil'=>'1'
         ));
 
         $faker = Faker::create();
@@ -22,7 +23,8 @@ class UserTableSeeder extends Seeder{
             \DB::table('users')->insert(array(
                 'name' => $faker->name,
                 'email' => $faker->email,
-                'password' => \Illuminate\Support\Facades\Hash::make('secret')
+                'password' => \Illuminate\Support\Facades\Hash::make('secret'),
+                'id_perfil'=>'1'
             ));
         }
     }
