@@ -47,10 +47,10 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Indicadores <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrador <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">IVA Informe</a></li>
-                            <li><a href="#">IVA Modificar</a></li>
+                            <li><a href="{{ url('/admin/users') }}">Usuarios</a></li>
+                            <li><a href="{{ url('/admin/perfiles') }}">Perfiles</a></li>
 
                         </ul>
                     </li>

@@ -39,6 +39,7 @@ Route::resource('proveedores','Proveedor\ProveedorController');
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'],function(){
 
     Route::resource('users','UsersController');
+    Route::resource('perfiles','PerfilesController');
 });
 
 Route::resource('excel','ExcelController');
