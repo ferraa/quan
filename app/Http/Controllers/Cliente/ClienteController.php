@@ -11,20 +11,10 @@ use App\User;
 
 class ClienteController extends Controller {
 
-    protected $operacion;
 
     public function __construct(){
         parent::__construct();
-       // $this->operacion=4;
-        //$this->middleware('operacion:'.$operacion);
-
-        //LISTAR CLIENTeS
-        //$operacion=3;
         $this->middleware('operacion');
-
-        //EDITAR CLIENTE
-       // $operacion=3;
-       // $this->middleware('operacion:'.$operacion, ['only' => ['edit']]);
     }
 	/**
 	 * Display a listing of the resource.

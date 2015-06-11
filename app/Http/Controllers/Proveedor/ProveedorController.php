@@ -11,6 +11,10 @@ use Psy\Command\ListCommand\PropertyEnumerator;
 class ProveedorController extends Controller {
 
 
+    public function __construct(){
+        parent::__construct();
+        $this->middleware('operacion');
+    }
 
 	/**
 	 * Display a listing of the resource.

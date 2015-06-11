@@ -17,6 +17,20 @@ class UserTableSeeder extends Seeder{
             'id_perfil'=>'1'
         ));
 
+        \DB::table('users')->insert(array(
+            'name' => 'Gerente uno',
+            'email' => 'gerente@gerente.com',
+            'password' => \Illuminate\Support\Facades\Hash::make('gerente'),
+            'id_perfil'=>'2'
+        ));
+
+        \DB::table('users')->insert(array(
+            'name' => 'Empleado uno',
+            'email' => 'empleado@empleado.com',
+            'password' => \Illuminate\Support\Facades\Hash::make('empleado'),
+            'id_perfil'=>'3'
+        ));
+
         $faker = Faker::create();
 
         for($i=0;$i<50;$i++){
