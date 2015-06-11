@@ -181,18 +181,20 @@
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
+
                                 <a href="#" class="btn btn-danger btn-lg-10 btn-delete"></span>Borrar</a>
                                 <a href="{{ url('/proveedores') }}" class="btn btn-success btn-lg-10">Volver</a>
 
                             </div>
                         </div>
 
+
                     </form>
+                    {!! Form::open(array('method' => 'DELETE', 'route'=>['proveedores.destroy',$proveedor->id_proveedor], 'id'=>'form-delete')) !!}
 
-                {!! Form::open(array('method' => 'DELETE', 'route'=>['proveedores.destroy',$proveedor->id_proveedor], 'id'=>'form-delete')) !!}
+                                                                            {!! Form::submit('Borrar', array('class' => 'btn btn-danger btn-sm')) !!}
+                                                                            {!! Form::close()!!}
 
-                {!! Form::submit('Borrar', array('class' => 'btn btn-danger btn-sm')) !!}
-                {!! Form::close()!!}
 
                     </div>
                     </div>

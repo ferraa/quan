@@ -12,7 +12,7 @@ class UserTableSeeder extends Seeder{
 
         \DB::table('users')->insert(array(
             'name' => 'Administrador uno',
-            'email' => 'admin',
+            'email' => 'admin@admin.com',
             'password' => \Illuminate\Support\Facades\Hash::make('admin'),
             'id_perfil'=>'1'
         ));
