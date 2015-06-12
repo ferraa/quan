@@ -118,11 +118,11 @@
 
 
                             <tr>
-                                <td contenteditable>{{$domicilio->calle}}</td>
-                                <td contenteditable>{{$domicilio->numero}}</td>
-                                <td contenteditable>{{$domicilio->piso}}</td>
-                                <td contenteditable>{{$domicilio->depto}}</td>
-                                <td contenteditable>{{$domicilio->id_ciudad}}</td>
+                                <td contenteditable></td>
+                                <td contenteditable></td>
+                                <td contenteditable></td>
+                                <td contenteditable></td>
+                                <td contenteditable></td>
                                 <td contenteditable></td>
                                 <td contenteditable></td>
 
@@ -154,10 +154,10 @@
                             </thead>
                             <tbody>
 
-                            <tr data-id="{{$razonSocial->id_razon_social}}">
-                                <td contenteditable>{{$razonSocial->categoriaRazonSocial->descripcion}}</td>
-                                <td contenteditable>{{$razonSocial->descripcion}}</td>
-                                <td contenteditable>{{$razonSocial->cuit_cuil}}</td>
+                            <tr data-id="">
+                                <td contenteditable></td>
+                                <td contenteditable></td>
+                                <td contenteditable></td>
                                 <td>
 
                                     <a href="#" class="btn btn-danger btn-sm btn-delete"><span class="glyphicon glyphicon-trash"></span></a>
@@ -189,10 +189,7 @@
                         </div>
 
                     </form>
- {!! Form::open(array('method' => 'DELETE', 'route'=>['clientes.destroy',$cliente->id_cliente], 'id'=>'form-delete')) !!}
 
-                                                 {!! Form::submit('Borrar', array('class' => 'btn btn-danger btn-lg-10')) !!}
-                                                 {!! Form::close()!!}
 
 
 
