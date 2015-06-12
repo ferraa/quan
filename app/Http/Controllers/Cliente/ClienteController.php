@@ -23,12 +23,7 @@ class ClienteController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-        $this->operacion=4;
-      //  $operacion=5;
-       // $this->middleware('operacion:'.$operacion);
 
-
-          //  $clientes = Cliente::name($request->get('name'))->paginate();
             $clientes = Cliente::all();
             return view('clientes.index',compact('clientes'));
 
@@ -41,7 +36,7 @@ class ClienteController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('clientes.create');
 	}
 
 	/**

@@ -55,6 +55,16 @@ class PerfilesOperacionesTableSeeder extends Seeder{
             'id_sistema_operacion' => '8',
 
         ));
+        \DB::table('perfiles_operaciones')->insert(array(
+            'id_perfil' => '1',
+            'id_sistema_operacion' => '9',
+
+        ));
+        \DB::table('perfiles_operaciones')->insert(array(
+            'id_perfil' => '1',
+            'id_sistema_operacion' => '10',
+
+        ));
 
 
         \DB::table('perfiles_operaciones')->insert(array(
@@ -71,12 +81,12 @@ class PerfilesOperacionesTableSeeder extends Seeder{
 
         \DB::table('perfiles_operaciones')->insert(array(
             'id_perfil' => '2',
-            'id_sistema_operacion' => '5',
+            'id_sistema_operacion' => '6',
 
         ));
         \DB::table('perfiles_operaciones')->insert(array(
             'id_perfil' => '2',
-            'id_sistema_operacion' => '6',
+            'id_sistema_operacion' => '7',
 
         ));
 
@@ -89,7 +99,7 @@ class PerfilesOperacionesTableSeeder extends Seeder{
 
         \DB::table('perfiles_operaciones')->insert(array(
             'id_perfil' => '3',
-            'id_sistema_operacion' => '5',
+            'id_sistema_operacion' => '6',
 
         ));
 

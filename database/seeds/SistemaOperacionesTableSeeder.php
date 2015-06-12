@@ -35,6 +35,13 @@ class SistemaOperacionesTableSeeder extends Seeder{
         ));
 
         \DB::table('sistema_operaciones')->insert(array(
+            'descripcion' => 'Crear Cliente',
+            'path' => '/clientes/create',
+            'method' => 'GET',
+
+        ));
+
+        \DB::table('sistema_operaciones')->insert(array(
             'descripcion' => 'Listar Proveedores',
             'path' => '/proveedores',
             'method' => 'GET',
@@ -56,6 +63,13 @@ class SistemaOperacionesTableSeeder extends Seeder{
             'descripcion' => 'Borrar Proveedor',
             'path' => '/proveedores/*',
             'method' => 'DELETE',
+
+        ));
+
+        \DB::table('sistema_operaciones')->insert(array(
+            'descripcion' => 'Crear Proveedor',
+            'path' => '/proveedores/create',
+            'method' => 'GET',
 
         ));
 
