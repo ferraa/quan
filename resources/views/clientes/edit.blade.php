@@ -49,12 +49,12 @@
                     <!--tabla contactos-->
                     <div class="col-md-10">
                         <h3>Contactos
-                            <button type="button" class="btn btn-default btn-sm">
+                            <button type="button" class="btn btn-default btn-sm mas-contactos">
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                             </button>
                         </h3>
 
-                        <table class="table table-striped">
+                        <table class="table table-striped table-contactos" >
                             <thead>
                             <tr>
                                 <th>Nombre y Apellido</th>
@@ -98,11 +98,11 @@
 
                     <div class="col-md-10">
                         <h3>Domicilios
-                            <button type="button" class="btn btn-default btn-sm">
-                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                            <button type="button" class="btn btn-default btn-sm mas-domicilios">
+                               <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                             </button>
                         </h3>
-                        <table class="table table-striped">
+                        <table class="table table-striped table-domicilios">
                             <thead>
                             <tr>
                                 <th>Calle</th>
@@ -140,11 +140,11 @@
                     </div>
                     <div class="col-md-10">
                         <h3>Razones Sociales
-                            <button type="button" class="btn btn-default btn-sm">
+                            <button type="button" class="btn btn-default btn-sm mas-razonesSociales">
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                             </button>
                         </h3>
-                        <table class="table table-striped">
+                        <table class="table table-striped table-razonesSociales">
                             <thead>
                             <tr>
                                 <th>Categoria</th>
@@ -201,5 +201,41 @@
                     </div>
                     </div>
                     </div>
+
+@endsection
+
+@section('scripts')
+
+    <script>
+        $(document).ready(function(){
+
+            agregarFila('contactos',['name','dni','email','email2','tel','tel_laboral','ext','celular','notas'],9);
+            agregarFila('domicilios',['calle','numero','piso','depto','ciudad','provincia','pais'],7);
+
+            agregarFila('razonesSociales',['categoria','descripcion','cuit_cuil'],3);
+
+           // agregarFila('contactos',9)
+
+
+        });
+
+
+        function agregarFila(nombre,campos,cantidad){
+            $('.mas-'+nombre).click(function(e){
+
+                $('.table-'+nombre+' tbody').append('<tr></tr>');
+
+
+                for(i=0;i<cantidad;i++){
+
+                    $('.table-'+nombre+' tr:last').append('<td><input class="form-control" id="'+campos[i]+'" name="'+campos[i]+'" /></td>');
+
+                }
+
+
+                alert($('.table-'+nombre+' input').serialize());
+            });
+        }
+    </script>
 
 @endsection
