@@ -30,6 +30,8 @@
                                 <td>{{ $user->perfil->descripcion }}</td>
                                 <td>
                                     <a href="{{ url('/admin/users/'.$user->id) }}" class="btn btn-success btn-sm">Ver</a>
+                                     <a href="{{ url('/admin/users/'.$user->id.'/edit') }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span>Editar</a>
+
                                     <a href="#" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
 
                                 </td>

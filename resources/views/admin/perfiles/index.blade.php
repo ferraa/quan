@@ -34,6 +34,7 @@
 
                                 <td>
                                     <a href="{{ url('/admin/perfiles/'.$perfil->id_perfil) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-open"></span>Ver</a>
+                                      <a href="{{ url('/admin/perfiles/'.$perfil->id_perfil.'/edit') }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span>Editar</a>
                                     <a href="#" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
                                 </td>
                             </tr>

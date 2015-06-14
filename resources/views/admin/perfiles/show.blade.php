@@ -8,12 +8,13 @@
                     <div class="panel-heading">Perfil</div>
 
                     <div class="panel-body">
-                        <p>.</p>
+                        <p></p>
                         <table class="table table-striped">
                             <tr>
                                 <th>#</th>
                                 <th>Descripion</th>
                                 <th>Operaciones</th>
+                                <th></th>
 
                             </tr>
 
@@ -30,12 +31,22 @@
                                         @endforeach
                                     </td>
 
-                        </table>
 
+
+                        </table>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <a href="{{ url('/admin/perfiles') }}" class="btn btn-success btn-sm">Volver</a>
+                                <a href="{{ url('/admin/perfiles/'.$perfil->id_perfil.'/edit') }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span>Editar</a>
+
+
+                            </div>
+                        </div>
 
 
 
                     </div>
+
                 </div>
             </div>
         </div>
