@@ -155,7 +155,10 @@
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
                                 <a href="{{ url('/clientes') }}" class="btn btn-success btn-sm">Volver</a>
-
+                                   <a href="{{ url('/clientes/'.$cliente->id_cliente.'/edit') }}" class="btn btn-warning btn-sm">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                            Editar
+                                        </a>
 
                             </div>
                         </div>

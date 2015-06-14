@@ -5,7 +5,12 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Usuarios</div>
+                    <div class="panel-heading">Usuarios
+                        <button type="button" class="btn btn-default btn-sm">
+                              <a href="{{ url('/costos/create') }}" ><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>
+                        </button>
+                        <a href="{{ url('/excel') }}" class="btn btn-success btn-sm pull-right" > Exportar Excel</a>
+                    </div>
 
                     <div class="panel-body">
                         <p>Hay {{$users->total()}} usuarios.</p>
@@ -25,7 +30,8 @@
                                 <td>{{ $user->perfil->descripcion }}</td>
                                 <td>
                                     <a href="{{ url('/admin/users/'.$user->id) }}" class="btn btn-success btn-sm">Ver</a>
-                                    <a href="#">Eliminar</a>
+                                    <a href="#" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
+
                                 </td>
                             </tr>
                             @endforeach
