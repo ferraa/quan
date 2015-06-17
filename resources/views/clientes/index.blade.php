@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+<!-- LA tabla tiene que mostrar Nombre de cliente, telefono de cliente y mail del primer contacto-->
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">

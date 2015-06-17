@@ -52,31 +52,32 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
+                                <th></th>
                                 <th>Nombre y Apellido</th>
-                                <th>DNI</th>
+                                <th>Celular</th>
                                 <th>Email principal</th>
                                 <th>Email secundario</th>
                                 <th>Telefono Particular</th>
                                 <th>Telefono Laboral</th>
                                 <th>Ext.</th>
-                                <th>Celular</th>
+                                <th>DNI</th>
                                 <th>Notas</th>
-                                <th>Foto</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($cliente->contactos as $contacto)
                             <tr>
+                                <td> {!! $contacto->foto->render(35,35)!!}</td>
                                 <td>{{$contacto->full_name}}</td>
-                                <td>{{$contacto->dni}}</td>
+                                <td>{{$contacto->celular}}</td>
                                 <td>{{$contacto->mail}}</td>
                                 <td>{{$contacto->mail2}}</td>
                                 <td>{{$contacto->tel_particular}}</td>
                                 <td>{{$contacto->tel_laboral}}</td>
                                 <td>{{$contacto->extension}}</td>
-                                <td>{{$contacto->celular}}</td>
+                                <td>{{$contacto->dni}}</td>
                                 <td>{{$contacto->notas}}</td>
-                                <td> {!! $contacto->foto->render(35,35)!!}</td>
+
 
                             </tr>
                             @endforeach
