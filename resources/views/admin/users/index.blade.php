@@ -9,7 +9,7 @@
                         <button type="button" class="btn btn-default btn-sm">
                               <a href="{{ url('admin/users/create') }}" ><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a>
                         </button>
-                        <a href="{{ url('/excel') }}" class="btn btn-success btn-sm pull-right" > Exportar Excel</a>
+                        <a href="#" class="btn btn-success btn-sm pull-right" > Exportar Excel</a>
                     </div>
 
                     <div class="panel-body">
