@@ -36,6 +36,8 @@ Route::resource('centros','Proveedor\CentroDeCostoController');
 
 Route::resource('proveedores','Proveedor\ProveedorController');
 
+Route::resource('facturacion','Facturacion\FacturacionController');
+
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'],function(){
 
     Route::resource('users','UsersController');

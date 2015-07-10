@@ -181,8 +181,6 @@
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
                                  <button type="submit" class="btn btn-primary">Guardar</button>
-
-                                 <a href="#" class="btn btn-danger btn-lg-10 btn-delete"></span>Borrar</a>
                                  <a href="{{ url('/clientes') }}" class="btn btn-success btn-lg-10">Volver</a>
 
                             </div>
